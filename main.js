@@ -1,14 +1,8 @@
-function log(message) {
-    console.log(message);
-}
-var message = "Hell World";
-log(message);
-var number = 1;
-var count = 2;
-function doSomething() {
-    for (var i = 0; i < 5; i++) {
-        console.log(i);
-    }
-    console.log('Finally: ' + i);
-}
-doSomething();
+"use strict";
+exports.__esModule = true;
+var like_component_1 = require("./like.component");
+// Part of Section 2's Exercise
+var initialLikes = 10;
+var likes = new like_component_1.LikeComponent(initialLikes, false);
+likes.onClick();
+likes.onClick();
