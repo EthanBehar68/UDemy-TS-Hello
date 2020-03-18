@@ -6,14 +6,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses.component';
+import { CoursesComponent } from './course/courses.component';
 import { CourseComponent } from './course/course.component';
-import { CoursesService } from './courses.service';
+import { CoursesService } from './course/courses.service';
 import { AuthorsComponent } from './authors/authors.component';
-import { AuthorsService } from './authors.service';
-import { SummaryPipe } from './summary.pipe';
+import { AuthorsService } from './authors/authors.service';
+import { SummaryPipe } from './custom pipes/summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
-import { TitleCasePipe } from './title-case.pipe';
+import { TitleCasePipe } from './custom pipes/title-case.pipe';
 
 @NgModule({
   declarations: [
