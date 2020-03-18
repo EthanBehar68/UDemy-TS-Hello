@@ -34,6 +34,12 @@ import { CoursesService } from './courses.service';
     {{ course.price | currency:'AUD':true:'3.2-2' }} <br/>
     {{ course.releaseDate | date:'shortDate' }} <br/>
     {{ text | summary:10}}
+    <div>
+        <input type="text" [(ngModel)]="exerciseTitle"/>
+        <br>
+            {{ exerciseTitle | titleCase }}
+        <br/>
+    </div>  
     `
 })
 // DOM Style Obj. Properties
@@ -47,7 +53,7 @@ export class CoursesComponent {
     isActive = true; //class binding
     email = "me@example.com"; // Banana in Box syntax is cleaner way of two way binding
     text =" Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... Long, long, long... "
-
+    exerciseTitle = "";
     // Pipes example - see mark up
     course = {
         title: "Pipes Example",
