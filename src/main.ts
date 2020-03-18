@@ -1,9 +1,21 @@
 
-import { LikeComponent } from './like.component';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-// Part of Section 2's Exercise
-let initialLikes = 10;
-let likes = new LikeComponent(initialLikes, false);
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-likes.onClick();
-likes.onClick();
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+// import { LikeComponent } from './like.component';
+
+// // Part of Section 2's Exercise
+// let initialLikes = 10;
+// let likes = new LikeComponent(initialLikes, false);
+
+// likes.onClick();
+// likes.onClick();
