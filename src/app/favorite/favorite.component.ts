@@ -3,7 +3,7 @@ import { faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { faStar} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-favorite',
+  selector: 'favorite',
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.css']
 })
