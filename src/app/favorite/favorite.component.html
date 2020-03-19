@@ -1,3 +1,4 @@
-<h1>
-    <fa-icon [icon]="iconClass" (click)="onClick()"></fa-icon>
-</h1>
+<div (click)="onClick()">
+    <i [hidden]="!isFavorite" class="fa fa-star"></i>
+    <i [hidden]="isFavorite" class="fa fa-star-o"></i>
+</div>
