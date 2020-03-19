@@ -14,6 +14,26 @@
     </div>
 </bootstrap-panel>
 
-<likes 
-    [likesCount]="mockTweet.likeCount"
-    [isActive]="mockTweet.isLiked"></likes>
+<likes [likesCount]="mockTweet.likeCount" [isActive]="mockTweet.isLiked"></likes>
+
+<div *ngIf="courses.length > 0">
+    List of Courses
+</div>
+<div *ngIf="courses.length == 0">
+    No courses yet
+</div>
+
+<div *ngIf="courses.length > 0; else noCourses">
+    List of Courses
+</div>
+<ng-template #noCourses>
+    No courses yet
+</ng-template>
+
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+<ng-template #coursesList>
+    List of courses
+</ng-template>
+<ng-template #noCourses>
+    No courses yet
+</ng-template>
