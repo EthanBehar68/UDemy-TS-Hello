@@ -1,4 +1,15 @@
 <div (click)="onClick()">
-    <i [hidden]="!isFavorite" class="fa fa-star"></i>
-    <i [hidden]="isFavorite" class="fa fa-star-o"></i>
+    <!-- <i [hidden]="!isFavorite" class="fa fa-star"></i>
+    <i [hidden]="isFavorite" class="fa fa-star-o"></i> -->
+
+    <!-- Use 'fa fa-star-o' and 'fa fa-star' in ngClass would mess up classes 
+         The second entry wouldn't get the 'fa' class 
+         ngClass is called an attribute directive -->
+    <!-- https://stackoverflow.com/questions/52458139/font-awesome-behavior-with-ng-class -->
+    <i class="fa"
+        [ngClass]="{
+            'fa-star-o': !isFavorite,
+            'fa-star': isFavorite
+        }">
+    </i>
 </div>

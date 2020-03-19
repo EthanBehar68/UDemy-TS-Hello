@@ -16,6 +16,9 @@
 
 <likes [likesCount]="mockTweet.likeCount" [isActive]="mockTweet.isLiked"></likes>
 
+<p></p>
+<b>ngIf Directive Examples</b>
+<p>These do not create two DOMs</p>
 <div *ngIf="courses.length > 0">
     List of Courses
 </div>
@@ -37,3 +40,101 @@
 <ng-template #noCourses>
     No courses yet
 </ng-template>
+
+<p></p>
+<b>Hidden Property Binding Example</b>
+<p>This creates two DOMs</p>
+<div [hidden]="courses.length == 0">
+    List of Courses
+</div>
+<div [hidden]="courses.length > 0">
+    No courses yet
+</div>
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" [class.active]="viewMode == 'map'" (click)="viewMode ='map'">Map View</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [class.active]="viewMode == 'list'" (click)="viewMode ='list'">List View</a>
+    </li>
+</ul>
+
+<p></p>
+<b>ngSwitch Directive Example</b>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<p></p>
+<b>ngIf Directive Examples</b>
+<ul>
+    <li *ngFor="let course of courses2">
+        {{ course.name }}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let course of courses2; index as i">
+        {{i + 1}}: {{ course.name }}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let course of courses2; even as isEven">
+        {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
+    </li>
+</ul>
+
+<p></p>
+<b>ngIf Directive and Change Detection Examples</b>
+<p></p>
+<button (click)="onAdd()">Add Course</button>
+
+<ul>
+    <li *ngFor="let course of coursesAdd">
+        {{ course.name }}
+        <button (click)="onRemove(course)">Remove</button>
+        <button (click)="onChange(course)">Change</button>
+
+    </li>
+</ul>
+
+<!-- Everytime button is clicked Angular reconstructs the UL>LI DOM Objects -->
+<!-- Large lists can causes performance issues -->
+<!-- trackBy helps alleviate this performance issue 
+    : def. implement for large list : small lists not needed -->
+<b>Check comments for performance information</b>
+<p></p>
+<button (click)="loadCourses()">Load Courses</button>
+<ul>
+    <li *ngFor="let course of coursesLoad; trackBy: trackCourse">
+        {{ course.name }}
+    </li>
+</ul>
+
+<a href="https://angular.io/api/common/NgForOf">Documentation for ngFor</a>
+
+<p></p>
+<b>ngStyle Examples</b>
+<p></p>
+<button (click)="changeCanSave()" [ngStyle]="{
+        'backgroundColor': canSave ? 'blue':'gray',
+        'color': canSave ? 'white':'black',
+        'fontWeight': canSave ? 'bold':'normal'
+    }">Save</button>
+
+<p></p>
+<b>Safe Traversal Operator (?): </b>
+<span>{{ task.assignee?.name}}</span>
+
+
+<p></p>
+<b>Creating Customer Directives</b>
+<p></p>
+ToUppercase
+<input type="text" [appInputFormat]="'uppercase'"><p></p>
+ToLowercase
+<input type="text" [appInputFormat]="'lowercase'">
