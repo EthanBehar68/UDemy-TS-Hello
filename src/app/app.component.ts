@@ -15,6 +15,12 @@ export class AppComponent {
     isFavorite: true
   }
 
+  mockTweet = {
+    body: "Body of mock tweet...",
+    isLiked: false,
+    likeCount: 10
+  }
+
   onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
     console.log("onFavoriteChanged: " + eventArgs.newValue);
   }

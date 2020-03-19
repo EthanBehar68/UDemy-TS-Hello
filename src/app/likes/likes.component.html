@@ -1,0 +1,6 @@
+<h1>Likes</h1>
+<div (click)="onClick()">
+    <span id="PinkHeart" [hidden]="!isLiked" class="fa fa-heart"></span>
+    <span id="GreyHeart" [hidden]="isLiked" class="fa fa-heart"></span>
+    <span>{{ count }}</span>
+</div>
