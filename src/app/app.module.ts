@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,11 +18,13 @@ import { InputFormatDirective } from './custom directives/input-format.directive
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
     SummaryPipe,
     TitleCasePipe,
+    InputFormatDirective,
     AppComponent,
     CoursesComponent,
     CourseComponent,
@@ -30,15 +32,16 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
     FavoriteComponent,
     PanelComponent,
     LikesComponent,
-    InputFormatDirective,
     ZippyComponent,
     ContactFormComponent,
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     CoursesService, // Uses singleton pattern by default

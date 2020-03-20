@@ -28,4 +28,15 @@
 
     <p>{{ f.value | json }}</p>
     <button [disabled]="f.invalid" class="btn btn-primary">Create</button>
+
+    <p></p>
+    <b>Section 8 Form Array Example</b>
+    <input type="text" class="form-control"
+    (keyup.enter)="addTopic(topic)" #topic>
+    <ul class="list-group">
+        <li 
+        *ngFor="let topic of topics.controls"
+        (click)="removeTopic(topic)"
+        class="list-group-item">{{ topic.value }}</li>
+    </ul>
 </form>
