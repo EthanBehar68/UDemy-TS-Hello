@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { AppError } from '../common/app-error';
 import { NotFoundError } from '../common/not-found-error';
@@ -10,8 +10,10 @@ import { BadInputError } from '../common/bad-input-error';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+  @Input('title') title: string;
   posts: any[];
-
+  isExpanded: boolean;
+  
   constructor(private service: PostService) {
   }
 
@@ -19,6 +21,10 @@ export class PostsComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAll()
       .subscribe(posts => this.posts = posts);
+  }
+
+  toggle() {
+    this.isExpanded = !this.isExpanded;
   }
 
   // Pessimistic Approach

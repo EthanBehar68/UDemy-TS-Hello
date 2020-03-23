@@ -25,6 +25,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostsComponent } from './posts/posts.component';
 import { AppErrorHandler } from './common/app-error-handler';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { GithubFollowersService } from './services/github-followers.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { AppErrorHandler } from './common/app-error-handler';
     NewCourseFormComponent,
     SignupFormComponent,
     ChangePasswordComponent,
-    PostsComponent
+    PostsComponent,
+    GithubFollowersComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { AppErrorHandler } from './common/app-error-handler';
     CoursesService, // Uses singleton pattern by default
     AuthorsService,
     PostService,
+    GithubFollowersService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
