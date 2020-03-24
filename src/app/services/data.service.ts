@@ -8,8 +8,8 @@ export class DataService {
     // Error handling tutorial come course comments
     // https://www.positronx.io/angular-error-handling-tutorial-with-examples/
 
-    getAll(): Observable<any[]> {
-        return this.http.get<any[]>(this.url);
+    getAll(): Observable<any> {
+        return this.http.get<any>(this.url);
     }
 
     create(resource): Observable<any> {

@@ -10,7 +10,7 @@ import { SectionOneThruWorkComponent } from './section-one-thru-work/section-one
 // { path: '', component: }
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'followers/:id', component: GithubProfileComponent },
+  { path: 'followers/:id/:username', component: GithubProfileComponent },
   { path: 'followers', component: GithubFollowersComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'sectionwork', component: SectionOneThruWorkComponent },
