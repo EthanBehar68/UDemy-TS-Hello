@@ -1,0 +1,15 @@
+<div *ngIf="isArchivesHome(); else elseBlock">
+    <h1>Archives</h1>
+    <ul>
+        <li *ngFor="let archive of archives">
+            <a (click)="archiveClick(archive)" class="forceLink">
+                {{ archive.year + '/' + archive.month}}</a>
+        </li>
+    </ul>
+</div>
+
+<ng-template #elseBlock>
+    <h1>Archive for {{ currentYear }} / {{ currentMonth }} </h1>
+
+    <button (click)="viewAll()">View All</button>
+</ng-template>

@@ -1,0 +1,21 @@
+.forceLink {
+    color: #0000EE;
+    padding: 2px 1px 0;
+  }
+  
+  .forceLink:link {
+    color: #265301;
+  }
+  
+  .forceLink:visited {
+    color: #551A8B;
+  }
+  
+  .forceLink:hover {
+    color: #0000EE;
+    cursor: pointer;
+  }
+  
+  .forceLink:active {
+    color: #FF0000;
+  }

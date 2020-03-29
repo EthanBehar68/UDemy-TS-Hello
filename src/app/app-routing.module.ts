@@ -6,6 +6,7 @@ import { GithubProfileComponent } from './github-profile/github-profile.componen
 import { PostsComponent } from './posts/posts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SectionOneThruWorkComponent } from './section-one-thru-work/section-one-thru-work.component';
+import { ArchivesComponent } from './archives/archives.component';
 
 // { path: '', component: }
 const routes: Routes = [
@@ -14,7 +15,9 @@ const routes: Routes = [
   { path: 'followers', component: GithubFollowersComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'sectionwork', component: SectionOneThruWorkComponent },
-  { path: '**', component: NotFoundComponent },
+  { path: 'archives/:year/:month', component: ArchivesComponent },
+  { path: 'archives', component: ArchivesComponent },
+  { path: '**', component: NotFoundComponent }
   // ** wildcard that captures any url not listed above
   // Order is important so ** needs to be lastk
   // If 'followers' was above 'follwers/:username' we would never reach 'followers/:username'

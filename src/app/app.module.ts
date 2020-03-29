@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './common/error-interceptor';
 import { AppRoutingModule } from './app-routing.module';
-// import { RouterModule } from '@angular/router';
 
 import { TitleCasePipe } from './custom pipes/title-case.pipe';
 import { SummaryPipe } from './custom pipes/summary.pipe';
@@ -33,6 +32,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { SectionOneThruWorkComponent } from './section-one-thru-work/section-one-thru-work.component';
+import { ArchivesComponent } from './archives/archives.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +57,8 @@ import { SectionOneThruWorkComponent } from './section-one-thru-work/section-one
     NavbarComponent,
     HomeComponent,
     NotFoundComponent,
-    SectionOneThruWorkComponent
+    SectionOneThruWorkComponent,
+    ArchivesComponent
   ],
   imports: [
     BrowserModule,
